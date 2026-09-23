@@ -24,7 +24,7 @@ function App() {
         setIsLoading(true); //显示加载成功
 
         try { //开始尝试
-            const response = await fetch('http://localhost:5001/api/chat', { //向此地址请求,等待完后,定义为响应对象
+            const response = await fetch('https://ai-knowledge-base-uped.onrender.com/api/chat', { //向此地址请求,等待完后,定义为响应对象
                 method:'POST', //请求方法
                 headers:{'Content-Type': 'application/json'}, //请求头:json内容
                 body:JSON.stringify({message:input}), //请求体:输入信息的json字符串
@@ -51,7 +51,7 @@ function App() {
         formData.append('file', file); //将文件装到包裹里
 
         try { //尝试(向后端服务区发送请求,带着请求方法和包裹)
-            const response = await fetch('http://localhost:5001/api/upload', {
+            const response = await fetch('https://ai-knowledge-base-uped.onrender.com/api/upload', {
                 method: 'POST',
                 body: formData,
             });
